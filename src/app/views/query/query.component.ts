@@ -18,6 +18,7 @@ export class QueryComponent implements OnInit {
       weight: 0
     }]
 
+
     let abilities = [{
       id: 0,
       en_name: '',
