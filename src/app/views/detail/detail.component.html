@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-3 mx-auto">
+    <div class="card">
+      <div class="container my-3">
+        <h2>{{pokemon.name|titlecase}}</h2>
+        <img [src]="pokemon.sprites.front_default" style="width: 100%;">
+        <div class="row text-center">
+          <div class="col-6">
+            Peso: {{(pokemon.weight) / 10}}Kg
+          </div>
+          <div class="col-6">
+            Altura: {{(pokemon.height) / 10}}m
+          </div>
+        </div>
+        <div *ngFor="let abilitie of abilities">
+          {{abilitie.name}}
+          <div class="dropdown">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Pokemones con habilidad
+            </button>
+            <!--                {{abilitie.pokemon}}-->
+            <div class="dropdown-menu">
+              <a class="dropdown-item" *ngFor="let pokemon of abilitie.pokemon"
+                 [routerLink]="'/detail/'+pokemon.pokemon.url.split('https://pokeapi.co/api/v2/pokemon/')[1].split('/')[0]">{{pokemon.pokemon.name}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
