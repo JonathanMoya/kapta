@@ -1,4 +1,9 @@
 # kapta
+Primero se necesitan instalar dependencias de npm 
+
+```javascript
+npm install
+```
 
 Para correr angular en el puerto 4200, se hace con el comando
 
